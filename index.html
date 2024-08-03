@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Equipment Sponsorship</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-3">
+        <h1>Sports Equipment Sponsorship</h1>
+        <nav>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#" onclick="showHome()">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#" onclick="showRegister()">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container my-4">
+        <section class="intro" id="home-section">
+            <div class="bg-white p-4 rounded shadow-sm">
+                <h2>Welcome to the Sports Equipment Sponsorship Platform</h2>
+                <p>Connecting schools with sponsors to fulfill their sports equipment needs.</p>
+                <a href="#" class="btn btn-primary">Get Started</a>
+            </div>
+        </section>
+        <section class="register" id="register-section" style="display: none;">
+            <div class="bg-white p-4 rounded shadow-sm">
+                <h2>Register</h2>
+                <form id="register-form">
+                    <div class="mb-3">
+                        <label for="user-type" class="form-label">I am a:</label>
+                        <select id="user-type" name="user-type" class="form-select" required onchange="showUserFields()">
+                            <option value="" disabled selected>Select your option</option>
+                            <option value="school">School</option>
+                            <option value="donor">Donor</option>
+                        </select>
+                    </div>
+
+                    <div id="school-fields" style="display: none;">
+                        <div class="mb-3">
+                            <label for="school-name" class="form-label">School Name:</label>
+                            <input type="text" id="school-name" name="school-name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="school-address" class="form-label">School Address:</label>
+                            <input type="text" id="school-address" name="school-address" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact-person" class="form-label">Contact Person:</label>
+                            <input type="text" id="contact-person" name="contact-person" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact-number" class="form-label">Contact Number:</label>
+                            <input type="text" id="contact-number" name="contact-number" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="province" class="form-label">Province:</label>
+                            <select id="province" name="province" class="form-select" required>
+                                <option value="Gauteng">Gauteng</option>
+                                <option value="Western Cape">Western Cape</option>
+                                <option value="Eastern Cape">Eastern Cape</option>
+                                <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+                                <option value="Free State">Free State</option>
+                                <option value="Limpopo">Limpopo</option>
+                                <option value="Mpumalanga">Mpumalanga</option>
+                                <option value="North West">North West</option>
+                                <option value="Northern Cape">Northern Cape</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="required-donation" class="form-label">Required Donation:</label>
+                            <select id="required-donation" name="required-donation" class="form-select" required>
+                                <option value="Sports Equipment">Sports Equipment</option>
+                                <option value="Revamping Sports Facilities">Revamping Sports Facilities</option>
+                                <option value="Sports Coaching">Sports Coaching</option>
+                                <option value="Sports Events Sponsorship">Sports Events Sponsorship</option>
+                                <option value="Scholarships for Athletes">Scholarships for Athletes</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sport-details" class="form-label">Sport Details:</label>
+                            <textarea id="sport-details" name="sport-details" class="form-control" rows="4" placeholder="Specify the sport and why the sponsorship is required" required></textarea>
+                        </div>
+                    </div>
+
+                    <div id="donor-fields" style="display: none;">
+                        <div class="mb-3">
+                            <label for="donor-name" class="form-label">Donor Name:</label>
+                            <input type="text" id="donor-name" name="donor-name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="company-reg-number" class="form-label">Company Registration Number:</label>
+                            <input type="text" id="company-reg-number" name="company-reg-number" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="donor-contact-person" class="form-label">Contact Person:</label>
+                            <input type="text" id="donor-contact-person" name="donor-contact-person" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="donor-contact-number" class="form-label">Contact Number:</label>
+                            <input type="text" id="donor-contact-number" name="donor-contact-number" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-success">Register</button>
+                </form>
+                <div id="confirmation-message" class="mt-3" style="display: none;">
+                    <p>Thank you for registering! Your information has been submitted successfully.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-dark text-white text-center py-3 mt-4">
+        <p>&copy; 2024 Sports Equipment Sponsorship. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
