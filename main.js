@@ -1,5 +1,6 @@
 function showHome() {
     document.getElementById('home-section').style.display = 'block';
+    // this must be none
     document.getElementById('register-section').style.display = 'none';
 }
 
